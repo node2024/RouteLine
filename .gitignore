@@ -1,0 +1,9 @@
+/deps/
+/build*/
+/build*.log
+/stage*/
+/release/
+*.replay
+*.so
+*.zip
+__pycache__/

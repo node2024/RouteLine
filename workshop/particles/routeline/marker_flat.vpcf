@@ -1,0 +1,45 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf54:version{326b1595-45e8-4004-aa5a-3e08655ff51f} -->
+{
+    _class = "CParticleSystemDefinition"
+    m_nBehaviorVersion = 12
+    m_nMaxParticles = 4
+    m_flConstantRadius = 10.0
+    m_ConstantColor = [ 255, 255, 255, 255 ]
+    m_ConstantNormal = [ 0.0, 0.0, 1.0 ]
+    m_Emitters =
+    [
+        {
+            _class = "C_OP_InstantaneousEmitter"
+            m_nParticlesToEmit = { m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT" m_nControlPoint = 5 m_nVectorComponent = 0 }
+        },
+    ]
+    m_Initializers =
+    [
+        { _class = "C_INIT_CreateFromCPs" m_nMinCP = 1 m_nMaxCP = 4 m_nIncrement = 1 },
+        {
+            _class = "C_INIT_InitFloat"
+            m_nOutputField = 7
+            m_InputValue = { m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT" m_nControlPoint = 5 m_nVectorComponent = 1 }
+        },
+    ]
+    m_Renderers =
+    [
+        {
+            _class = "C_OP_RenderSprites"
+            m_nOrientationType = "PARTICLE_ORIENTATION_ALIGN_TO_PARTICLE_NORMAL"
+            // All sprites in this effect share the same configured tint (CP 6).
+            m_vecColorScale = { m_nType = "PVEC_TYPE_CP_VALUE" m_nControlPoint = 6 m_vCPValueScale = [ 0.003921569, 0.003921569, 0.003921569 ] }
+            m_nColorBlendType = "PARTICLE_COLOR_BLEND_MULTIPLY"
+            m_nOutputBlendMode = "PARTICLE_OUTPUT_BLEND_MODE_ALPHA"
+            m_flSelfIllumAmount = { m_nType = "PF_TYPE_LITERAL" m_flLiteralValue = 1.0 }
+            m_flDiffuseAmount = { m_nType = "PF_TYPE_LITERAL" m_flLiteralValue = 0.0 }
+            m_flOverbrightFactor = { m_nType = "PF_TYPE_LITERAL" m_flLiteralValue = 1.0 }
+            m_nFogType = "PARTICLE_FOG_DISABLED"
+            m_bDisableZBuffering = false
+            m_vecTexturesInput =
+            [
+                { m_hTexture = resource:"materials/routeline/marker_flat.vtex" },
+            ]
+        },
+    ]
+}

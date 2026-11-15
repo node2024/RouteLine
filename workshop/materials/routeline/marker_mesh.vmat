@@ -1,0 +1,9 @@
+Layer0
+{
+    shader "generic.vfx"
+    F_UNLIT 1
+    F_DO_NOT_CAST_SHADOWS 1
+    TextureColor "[1.0 1.0 1.0 1.0]"
+    g_vColorTint "[1.0 1.0 1.0 1.0]"
+    g_flModelTintAmount 1.0
+}
